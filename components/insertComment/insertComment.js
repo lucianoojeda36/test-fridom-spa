@@ -12,17 +12,9 @@ const InsertComment = ({ sendCommentDataHandler }) => {
     const D = date.getDate()
     const Hs = date.getHours()
     const Ms = date.getMinutes()
-
-    // const actualTimeStamp = `${D}-${M}-${Y}` + '-' + `${Hs}:` + Ms < 10 ? `0${Ms}` : `${Ms}`
     const Ms10 = `0${Ms}`
+
     const actualTimeStamp = `${D}-${M}-${Y} - ${Hs}:${Ms < 10 ? Ms10 : Ms}`
-
-    console.log('===Y====>', Y)
-    console.log('===M====>', M)
-    console.log('===D====>', D)
-    console.log('===Hs====>', Hs)
-    console.log('===Ms====>', Ms)
-
 
     return actualTimeStamp
 

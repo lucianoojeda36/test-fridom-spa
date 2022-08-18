@@ -1,7 +1,7 @@
 import InsertComment from "../components/insertComment/insertComment"
 import { Container } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
-import Comment from "../components/comments/Comments";
+import Comments from "../components/comments/Comments";
 import theme from "../theme/theme";
 import { useState } from "react";
 
@@ -22,7 +22,7 @@ const Home = () => {
           p: 5,
         }}>
           <InsertComment sendCommentDataHandler={sendCommentDataHandler} />
-          <Comment commentData={commentData} />
+          <Comments commentData={commentData} />
         </Container>
       </ThemeProvider>
     </>

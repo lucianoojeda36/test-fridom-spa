@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Box, Typography } from '@mui/material';
 
-const Comment = ({ commentData }) => {
+const Comments = ({ commentData }) => {
   return (
     <>{
       commentData.length > 0 ? commentData.map((e, index) =>
@@ -43,4 +43,4 @@ const Comment = ({ commentData }) => {
   )
 }
 
-export default Comment
+export default Comments
