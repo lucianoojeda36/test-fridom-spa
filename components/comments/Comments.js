@@ -1,6 +1,5 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+import { Box, Typography } from '@mui/material';
 
 const Comment = ({ commentData }) => {
   return (
@@ -19,7 +18,7 @@ const Comment = ({ commentData }) => {
         >
           <Box sx={{ display: 'flex', flexDirection: 'column' }}>
             <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-              <Typography sx={{ pb: 3 }}>
+              <Typography sx={{ pb: 3, fontWeight: 'bold' }}>
                 {e.name}
               </Typography>
               <Typography>
@@ -30,9 +29,7 @@ const Comment = ({ commentData }) => {
               <Typography sx={{ pl: 1 }}>{e.comment}</Typography>
             </Box>
           </Box>
-
         </Box>
-
       ) : <Box sx={{
         display: 'flex',
         justifyContent: 'center',
@@ -42,7 +39,6 @@ const Comment = ({ commentData }) => {
         <Typography sx={{ opacity: 0.5 }}>No hay Comentarios </Typography>
       </Box>
     }
-
     </>
   )
 }

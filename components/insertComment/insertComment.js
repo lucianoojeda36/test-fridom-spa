@@ -1,16 +1,37 @@
 import { useState } from "react";
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import { TextField, Box, Button, Typography } from '@mui/material';
+
+
 
 const InsertComment = ({ sendCommentDataHandler }) => {
-  const date = new Date()
-  const actualDate = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()} - ${date.getHours()}:${date.getMinutes()}`
+
+  const actualDateHandler = () => {
+    const date = new Date()
+    const Y = date.getFullYear()
+    const M = date.getMonth() + 1
+    const D = date.getDate()
+    const Hs = date.getHours()
+    const Ms = date.getMinutes()
+
+    // const actualTimeStamp = `${D}-${M}-${Y}` + '-' + `${Hs}:` + Ms < 10 ? `0${Ms}` : `${Ms}`
+    const Ms10 = `0${Ms}`
+    const actualTimeStamp = `${D}-${M}-${Y} - ${Hs}:${Ms < 10 ? Ms10 : Ms}`
+
+    console.log('===Y====>', Y)
+    console.log('===M====>', M)
+    console.log('===D====>', D)
+    console.log('===Hs====>', Hs)
+    console.log('===Ms====>', Ms)
+
+
+    return actualTimeStamp
+
+  }
+
   const [commentValues, setCommentValues] = useState({
     name: '',
     comment: '',
-    date: actualDate,
+    date: actualDateHandler(),
   })
 
 
@@ -45,7 +66,8 @@ const InsertComment = ({ sendCommentDataHandler }) => {
           }}>
             <Typography variant="h6" component="h2"
               sx={{
-                pb: 1
+                pb: 1,
+                fontFamily: 'DynaPuff'
               }}
             >
               Ingresa tu comentario
@@ -54,28 +76,34 @@ const InsertComment = ({ sendCommentDataHandler }) => {
           <Box sx={{
             mb: 2
           }}>
-            <TextField id="outlined-basic" label="Name" value={commentValues.name} placeholder="Name" name='name' variant="outlined" onChange={(e) => setCommentValuesHandler(e, 'name')} />
+            <TextField id="outlined-basic" size="small" label="Autor name" value={commentValues.name} placeholder="Autor name" name='name' variant="outlined" onChange={(e) => setCommentValuesHandler(e, 'name')} />
           </Box>
           <Box sx={{
             mb: 2
           }}>
             <TextField sx={{
               width: '100%',
-            }} id="outlined-basic" label="Comment" value={commentValues.comment} placeholder="Comment" variant="outlined" name='comment' multiline onChange={(e) => setCommentValuesHandler(e, 'comment')} />
+
+            }} id="outlined-basic" size="small" label="Comment" value={commentValues.comment} style={{ fontFamily: 'sans-serif' }} placeholder="Comment" variant="outlined" name='comment' multiline onChange={(e) => setCommentValuesHandler(e, 'comment')} />
           </Box>
           <Box sx={{
             mb: 2,
             display: 'flex',
             justifyContent: 'flex-end'
           }}>
-            <Button variant="contained" onClick={() => {
-              sendCommentDataHandler(commentValues)
-              setCommentValues({
-                name: '',
-                comment: '',
-                date: actualDate,
-              })
-            }}>Enviar</Button>
+            <Button variant="contained"
+              color="primary"
+              sx={{
+                fontFamily: 'DynaPuff'
+              }}
+              onClick={() => {
+                sendCommentDataHandler(commentValues)
+                setCommentValues({
+                  name: '',
+                  comment: '',
+                  date: actualDateHandler(),
+                })
+              }}>Enviar</Button>
 
           </Box>
         </Box>
@@ -84,7 +112,7 @@ const InsertComment = ({ sendCommentDataHandler }) => {
           pt: 2,
           pl: 2,
         }}>
-          <Typography variant='h6'>
+          <Typography variant='h6' sx={{ fontFamily: 'DynaPuff' }}>
             Comentarios anteriores
           </Typography>
         </Box>
