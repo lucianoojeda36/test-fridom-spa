@@ -16,13 +16,13 @@ To install and run this proyect just type and execute</p>
 
 <p>1-git clone https://github.com/lucianoojeda36/test-fridom-spa-typescript.git</p>
 <p>2-npm install >> ./</p>
-<p>4-npm start >> ./</p>
+<p>4-npm run dev >> ./</p>
  
  <br/> 
     <h3 align = "left">
 Initialize with Docker </h3>
  <br/> 
-
+<p>
  To guarantee the correct funcionality of the project run it with docker commands to simulate the correct envarioment where the same was built</p>
  <p>Steps:</p>
 
@@ -33,7 +33,7 @@ Initialize with Docker </h3>
    <h3 align = "left">
 Preview </h3>
  <br/> 
-<img align = "center" src=".public/assets/img/screen01.jpg" alt = "inst"  />
+<img align = "center" src="https://github.com/lucianoojeda36/test-fridom-spa/blob/5b8debe0d244c3bcd11fdb9cf74fb040affe1edf/public/assets/img/screen01.jpg" alt = "inst"  />
 
  <br/> 
     <h3 align = "left">
